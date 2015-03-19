@@ -1,0 +1,83 @@
+// // Custom Sophie Navbar Stuff
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: @zindex-dropdown;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0; // override default ul
+  list-style: none;
+  font-size: @font-size-base;
+  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  background-color: @dropdown-bg;
+  border: 1px solid @dropdown-fallback-border; // IE8 fallback
+  border: 1px solid @dropdown-border;
+  border-radius: @border-radius-base-dropdown;
+  .box-shadow(0 6px 12px rgba(0,0,0,.175));
+  background-clip: padding-box;
+}
+
+// // Toggle Button
+.navbar-toggle {
+  float: left;
+  margin-left: @navbar-padding-horizontal;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-color: @sophie-subtle-pink;
+  padding: 20px;
+  padding-top: 45px;
+  position: relative;
+ }
+
+.navbar-header {
+  margin-top: -45px;
+}
+
+.navbar-offcanvas, .top_nav_full {font-family: @nav-link-font-family; text-transform: uppercase; }
+.navbar {float:left; width:100%;}
+
+//Hide & Show Top Nav Menu
+.top_nav_full {display:none;}
+.top_nav_offcanvas {display:block;}
+//./Hide & Show Top Nav Menu
+
+@media (min-width: @screen-xs-max) {
+
+// Hide & Show Top Nav Menu
+  .top_nav_full {display:block;}
+  .top_nav_offcanvas {display:none}
+
+// ./Hide & Show Top Nav Menu
+  .primary-navigation {background: @navbar-secondary-bg; margin-top: 10px}
+  .primary-navigation-list > li > a:link, .primary-navigation-list > li > a:visited {color: @sophie-subtle-pink}
+  .primary-navigation-list  a {font-size: 18px}
+  .navbar-nav > li > .dropdown-menu {margin-top: 10px}
+}
+
+@media (max-width: @screen-xs-max) {
+  .navbar-fixed-top-sm {position: fixed; right: 0px; left: 0px; z-index: 1030;}
+  .nav > li {background-color: fade(@chocolate-brown, 80%); margin: 5px 0 5px 5px; padding: 5px 10px;}
+  .nav > li a:link, .nav > li a:visited {color:@sophie-subtle-pink;}
+  .nav > li a:hover, .nav > li a:active {background-color: darken(@chocolate-brown, 10%)}
+  .navbar-offcanvas {background-color: @sophie-subtle-pink; background: url('../img/off-canvas-nav-background.jpg') no-repeat;}
+}
+
+// #navigation {left: -100%}
+// #navigation { -webkit-transition: all 0.3s ease-out;
+//   -moz-transition: all 0.3s ease-in-out;
+//    -ms-transition: all 0.3s ease-in-out;
+//    -o-transition: all 0.3s ease-in-out;
+//    transition: all 0.3s ease-in-out;}
+// #navigation.in{left:0}
+
+@media (min-width: @screen-sm-max) {}
+
+@media (max-width: @screen-md-max) {}
+
+@media (max-width: @screen-lg-min) {}
